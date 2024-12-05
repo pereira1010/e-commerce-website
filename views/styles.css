@@ -476,137 +476,6 @@ img:hover {
 .shippingDetails strong {
     color: #333;
 }
-/* Login Page */
-/* General container styling */
-.loginContainer, .registerContainer {
-  width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-h1 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-label {
-  font-size: 14px;
-  color: #555;
-  text-align: left;
-}
-
-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-button {
-  padding: 10px;
-  background-color: #369e62;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #2a7d4f;
-}
-
-p {
-  font-size: 14px;
-  color: #555;
-}
-
-a {
-  color: #369e62;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/*Register Page*/
-
-/* General container styling */
-.registerContainer, .successContainer {
-  width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-h1 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-label {
-  font-size: 14px;
-  color: #555;
-  text-align: left;
-}
-
-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-button {
-  padding: 10px;
-  background-color: #369e62;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #2a7d4f;
-}
-
-p {
-  font-size: 14px;
-  color: #555;
-}
-
-a {
-  color: #369e62;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
 
   @media screen and (max-width:480px) {
     nav{
@@ -699,3 +568,23 @@ a:hover {
       padding: 20px;
     }
   }
+
+  /*Login Formatting*/
+
+.loginContainer 
+{
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginImg
+{
+  height: 200px;
+  width: 200px;
+}
