@@ -1,5 +1,8 @@
 const sqlite3 = require('sqlite3').verbose();
-const path = requite('path');
+const express = require('express');
+const path = require('path');
+
+const dbRouter = express.Router();
 
 const db = new sqlite3.Database(path.join(__dirname, 'storeDB.db'), (err) => {
     if (err) {
@@ -19,4 +22,32 @@ db.serialize( () => {
     );
 });
 
-module.exports = db;
+dbRouter.post('/submit', (req, res) => {
+    const { username, password } = req.body;
+
+    db.run(
+        'INSERT INTO users (username, password) VALUES (?, ?)',
+        [username, password],
+        (err) => {
+            if (err)
+            {
+                console.error(err.message);
+                return res.status(500).send(`
+                    <script>
+                        alert('Error saving user to database.');
+                        window.location.href = '/';
+                    </script>
+                `);
+            }
+
+            res.send(`
+                <script>
+                    alert('User ${username} registered successfully!');
+                    window.location.href = '/';
+                </script>
+            `);
+        }
+    );
+});
+
+module.exports = dbRouter;
