@@ -54,22 +54,28 @@
 
         </nav>
 
+        <!-- =============================================
+             =========== Login Information ===============
+             =============================================
+            -->
         <div class="loginContainer">
 
             <h2>Login</h2>
 
             <img src="../img/represent.jpg" class="loginImg">
-            <form name="loginForm" class="loginForm">
+
+            <form action="/database/submit" method="POST" name="loginForm" class="loginForm">
 
                 <label>Username:</label>
-                <input type="text" id="username" class="username">
+                <input type="text" id="username" name="username" class="username">
                 <br><br>
 
                 <label>Password:</label>
-                <input type="password" id="password" class="password">
+                <input type="password" id="password" name="password" class="password">
                 <br><br>
 
-                <input type="button" onclick="takeLoginInfo()" id="loginBtn" value="Login">
+                <!--input type="button" onclick="takeLoginInfo()" id="loginBtn" value="Login"-->
+                <button type="submit">Submit</button>
 
             </form>
 
