@@ -8,7 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Product Details</title>
 </head>
 
@@ -16,18 +16,20 @@
     <nav id="nav">
         <div class="navTop">
             <div class="navItem">
-                <a href="index.html">
-                    <img src="./img/logo.png" alt="Logo">
+                <a href="/">
+                    <img src="../img/logo.png" alt="Logo">
                 </a>
             </div>
             <div class="navItem">
                 <div class="search">
                     <input type="text" placeholder="Search..." class="searchInput">
-                    <img src="./img/search.png" width="20" height="20" alt="" class="searchIcon">
+                    <img src="../img/search.png" width="20" height="20" alt="" class="searchIcon">
                 </div>
             </div>
             <div class="navItem">
-                <img src="./img/shoppingcart.png" alt="cart" class="shoppingcart">
+                <img src="../img/shoppingcart.png" alt="cart" class="shoppingcart">
+            </div>
+                </div>
             </div>
         </div>
         <div class="navBottom">
@@ -40,7 +42,7 @@
 
     <div class="detailsContainer">
         <div class="detailsImage">
-            <img src="./img/wshirt.jpg" alt="Product" class="productImage">
+            <img src="../img/wshirt.jpg" alt="Product" class="productImage">
         </div>
         <div class="detailsInfo">
             <h1 class="productTitle">Short Sleeve</h1>
@@ -53,7 +55,7 @@
                 <strong>Shipping:</strong> 
                 Free shipping on orders over $50. Standard shipping takes 5-7 business days. Expedited shipping options are available at checkout.
             </p>
-            <form class="detailsForm" action="login.html" method="GET">
+            <form class="detailsForm" id="addToCartForm">
                 <label for="size">Size:</label>
                 <select id="size" name="size">
                     <option value="small">Small</option>
@@ -61,12 +63,40 @@
                     <option value="large">Large</option>
                     <option value="xlarge">X-Large</option>
                 </select>
+            
                 <label for="quantity">Quantity:</label>
                 <input type="number" id="quantity" name="quantity" min="1" value="1">
-                <button type="submit" class="addToCartButton">Add to Cart</button>
+            
+                <button type="button" id="addToCartButton" class="addToCartButton">Add to Cart</button>
             </form>
+            <div id="output" style="color: green; margin-top: 10px;"></div>
         </div>
     </div>
+
+    <script>
+        document.getElementById("addToCartButton").addEventListener("click", () => {
+            const productName = "Short Sleeve"; // Replace with dynamic product name if needed
+            const price = 35; // Replace with dynamic price
+            const img = "../img/wshirt.jpg"; // Replace with the product image path
+            const size = document.getElementById("size").value; // Get size
+            const quantity = document.getElementById("quantity").value; // Get quantity
+        
+            // Save cart details to localStorage
+            const cartItem = {
+                productName: productName,
+                price: price,
+                img: img,
+                size: size,
+                quantity: quantity
+            };
+        
+            localStorage.setItem("cartItem", JSON.stringify(cartItem));
+        
+            // Redirect to payment.html
+            window.location.href = "payment.html";
+        });
+        </script>
+        <script src="../js/cart.js"></script>
 
     <footer>
         <div class="footerLeft">
@@ -111,10 +141,10 @@
             <div class="footerRightMenu">
                 <h1 class="fMenuTitle">Follow Us</h1>
                 <div class="fIcons">
-                    <img src="./img/facebook.png" alt="" class="fIcon">
-                    <img src="./img/twitter.png" alt="" class="fIcon">
-                    <img src="./img/instagram.png" alt="" class="fIcon">
-                    <img src="./img/whatsapp.png" alt="" class="fIcon">
+                    <img src="../img/facebook.png" alt="" class="fIcon">
+                    <img src="../img/twitter.png" alt="" class="fIcon">
+                    <img src="../img/instagram.png" alt="" class="fIcon">
+                    <img src="../img/whatsapp.png" alt="" class="fIcon">
                 </div>
             </div>
             <div class="footerRightMenu">

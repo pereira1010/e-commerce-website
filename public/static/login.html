@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Login</title>
 </head>
-
 <body>
     <div class="loginContainer">
         <h1>Login</h1>
-        <form action="cart.html" method="POST">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <form id="loginForm">
+            <label for="username">Email:</label>
+            <input type="email" id="username" name="username" placeholder="Enter your email" required>
+
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
             <button type="submit" class="loginButton">Login</button>
         </form>
-        <p>Don't have an account? <a href="register.html">Create one</a></p>
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+        <div id="output"></div>
     </div>
+    <script src="../js/login.js"></script>
 </body>
-
 </html>

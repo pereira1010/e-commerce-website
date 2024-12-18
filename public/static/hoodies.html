@@ -8,26 +8,27 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>Tshirt</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>HOODIES</title>
 </head>
 
 <body>
+
     <nav id="nav">
         <div class="navTop">
             <div class="navItem">
-                <a href="index.html">
-                    <img src="./img/logo.png" alt="Logo">
+                <a href="/">
+                    <img src="../img/logo.png" alt="Logo">
                 </a>
             </div>
             <div class="navItem">
                 <div class="search">
                     <input type="text" placeholder="Search..." class="searchInput">
-                    <img src="./img/search.png" width="20" height="20" alt="" class="searchIcon">
+                    <img src="../img/search.png" width="20" height="20" alt="" class="searchIcon">
                 </div>
             </div>
             <div class="navItem">
-                <img src="./img/shoppingcart.png" alt="cart" class="shoppingcart">
+                <img src="../img/shoppingcart.png" alt="cart" class="shoppingcart">
             </div>
         </div>
         <div class="navBottom">
@@ -39,23 +40,31 @@
     </nav>
 
     <!-- Product Placeholder Section -->
-    <div class="productContainer">
-        <div class="productCard">
-            <a href="details.html">
-                <img src="./img/bsweats.png" alt="Product" class="productImage">
-            </a>
-            <h2 class="productTitle">Short Sleeve</h2>
-            <p class="productPrice">$35</p>
-        </div>
-        <div class="productCard">
-            <a href="details.html">
-                <img src="./img/rsweats.png" alt="Product" class="productImage">
-            </a>
-            <h2 class="productTitle">Long Sleeve</h2>
-            <p class="productPrice">$40</p>
-        </div>
-    </div>
+    <div class="productContainer" id="products"></div>
 
+<script>
+  async function loadProducts() {
+    try {
+      const response = await fetch('/api/products/hoodies');
+      const products = await response.json();
+
+      const container = document.getElementById('products');
+      container.innerHTML = products.map(product => `
+        <div class="productCard">
+          <a href="details.html">
+            <img src="${product.img}" alt="${product.name}" class="productImage">
+          </a>
+          <h2 class="productTitle">${product.name}</h2>
+          <p class="productPrice">$${product.price}</p>
+        </div>
+      `).join('');
+    } catch (error) {
+      console.error('Error loading products:', error);
+    }
+  }
+
+  loadProducts();
+</script>
     <footer>
         <div class="footerLeft">
             <div class="footerMenu">
@@ -99,10 +108,10 @@
             <div class="footerRightMenu">
                 <h1 class="fMenuTitle">Follow Us</h1>
                 <div class="fIcons">
-                    <img src="./img/facebook.png" alt="" class="fIcon">
-                    <img src="./img/twitter.png" alt="" class="fIcon">
-                    <img src="./img/instagram.png" alt="" class="fIcon">
-                    <img src="./img/whatsapp.png" alt="" class="fIcon">
+                    <img src="../img/facebook.png" alt="" class="fIcon">
+                    <img src="../img/twitter.png" alt="" class="fIcon">
+                    <img src="../img/instagram.png" alt="" class="fIcon">
+                    <img src="../img/whatsapp.png" alt="" class="fIcon">
                 </div>
             </div>
             <div class="footerRightMenu">

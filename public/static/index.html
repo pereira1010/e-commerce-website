@@ -8,39 +8,51 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Custom Store</title>
 </head>
 
 <body>
     <nav id="nav">
         <div class="navTop">
+            <!-- Logo -->
             <div class="navItem">
-                <a href="index.html">
-                    <img src="./img/logo.png" alt="Logo">
+                <a href="/">
+                    <img src="../img/logo.png" alt="Logo">
                 </a>
             </div>
+    
+            <!-- Search Bar -->
             <div class="navItem">
                 <div class="search">
                     <input type="text" placeholder="Search..." class="searchInput">
-                    <img src="./img/search.png" width="20" height="20" alt="" class="searchIcon">
+                    <img src="../img/search.png" width="20" height="20" alt="" class="searchIcon">
                 </div>
             </div>
+    
+            <!-- Login Button -->
             <div class="navItem">
-                <img src="./img/shoppingcart.png" alt="cart" class="shoppingcart">
+                <a href="/static/login.html" class="loginButton">Login</a>
+            </div>
+    
+            <!-- Shopping Cart -->
+            <div class="navItem">
+                <img src="../img/shoppingcart.png" alt="cart" class="shoppingcart">
             </div>
         </div>
+    
+        <!-- Navigation Menu -->
         <div class="navBottom">
-            <h3 class="menuItem"><a href="tshirts.html" class="menuLink">SHIRTS</a></h3>
-            <h3 class="menuItem"><a href="shorts.html" class="menuLink">SHORTS</a></h3>
-            <h3 class="menuItem"><a href="hoodies.html" class="menuLink">HOODIES</a></h3>
-            <h3 class="menuItem"><a href="sweatpants.html" class="menuLink">SWEATPANTS</a></h3>
+            <h3 class="menuItem"><a href="/static/tshirts.html" class="menuLink">SHIRTS</a></h3>
+            <h3 class="menuItem"><a href="/static/shorts.html" class="menuLink">SHORTS</a></h3>
+            <h3 class="menuItem"><a href="/static/hoodies.html" class="menuLink">HOODIES</a></h3>
+            <h3 class="menuItem"><a href="/static/sweatpants.html" class="menuLink">SWEATPANTS</a></h3>
         </div>
     </nav>
 
 
     <div class="product" id="product">
-        <img src="./img/designhere.jpg" alt="" class="productImg">
+        <img src="../img/designhere.jpg" alt="" class="productImg" style="width: auto; height: auto;">
         <div class="productDetails">
             <h1 class="productTitle">CUSTOMIZE</h1>
             <h2 class="productPrice">$35</h2>
@@ -56,51 +68,29 @@
                 <div class="size">M</div>
                 <div class="size">L</div>
             </div>
-            <a href="payment.html" class="productButton">CUSTOMIZE NOW!</a>
+            <a href="../static/payment.html" class="productButton">CUSTOMIZE NOW!</a>
         </div>
-        <!--<div class="payment">
-            <h1 class="payTitle">Personal Information</h1>
-            <label>Name and Surname</label>
-            <input type="text" placeholder="John Doe" class="payInput">
-            <label>Phone Number</label>
-            <input type="text" placeholder="+1 234 5678" class="payInput">
-            <label>Address</label>
-            <input type="text" placeholder="Elton St 21 22-145" class="payInput">
-            <h1 class="payTitle">Card Information</h1>
-            <div class="cardIcons">
-                <img src="./img/visa.png" width="40" alt="" class="cardIcon">
-                <img src="./img/master.png" alt="" width="40" class="cardIcon">
-            </div>
-            <input type="password" class="payInput" placeholder="Card Number">
-            <div class="cardInfo">
-                <input type="text" placeholder="mm" class="payInput sm">
-                <input type="text" placeholder="yyyy" class="payInput sm">
-                <input type="text" placeholder="cvv" class="payInput sm">
-            </div>
-            <button class="payButton">Checkout!</button>
-            <span class="close">X</span>
-        </div> -->
     </div>
     <div class="gallery">
         <div class="galleryItem">
             <h1 class="galleryTitle">Represent!</h1>
-            <img src="./img/represent.jpg"
+            <img src="../img/represent.jpg"
                 alt="" class="galleryImg">
         </div>
         <div class="galleryItem">
-            <img src="./img/middlephoto.jpg"
+            <img src="../img/middlephoto.jpg"
                 alt="" class="galleryImg">
             <h1 class="galleryTitle">Customize Your Life, Stand Out From the Rest.</h1>
         </div>
         <div class="galleryItem">
             <h1 class="galleryTitle">Stand Out!</h1>
-            <img src="./img/standout.jpg"
+            <img src="../img/standout.jpg"
                 alt="" class="galleryImg">
         </div>
     </div>
     <div class="newSeason">
         <div class="nsItem">
-            <img src="./img/hoodieback.jpg"
+            <img src="../img/hoodieback.jpg"
                 alt="" class="nsImg">
         </div>
         <div class="nsItem">
@@ -112,7 +102,7 @@
             </a>
         </div>
         <div class="nsItem">
-            <img src="./img/deliveryshirt.jpg"
+            <img src="../img/deliveryshirt.jpg"
                 alt="" class="nsImg">
         </div>
     </div>
@@ -159,10 +149,10 @@
             <div class="footerRightMenu">
                 <h1 class="fMenuTitle">Follow Us</h1>
                 <div class="fIcons">
-                    <img src="./img/facebook.png" alt="" class="fIcon">
-                    <img src="./img/twitter.png" alt="" class="fIcon">
-                    <img src="./img/instagram.png" alt="" class="fIcon">
-                    <img src="./img/whatsapp.png" alt="" class="fIcon">
+                    <img src="../img/facebook.png" alt="" class="fIcon">
+                    <img src="../img/twitter.png" alt="" class="fIcon">
+                    <img src="../img/instagram.png" alt="" class="fIcon">
+                    <img src="../img/whatsapp.png" alt="" class="fIcon">
                 </div>
             </div>
             <div class="footerRightMenu">
