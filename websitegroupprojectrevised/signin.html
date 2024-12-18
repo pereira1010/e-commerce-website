@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - ELEGANCE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="left-section">
+                <div class="logo">
+                    <a href="index.html">ELEGANCE</a>
+                </div>
+                <a href="#" class="login-button">Sign In</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html?type=shirt">Shirts</a></li>
+                <li><a href="product.html?type=shorts">Shorts</a></li>
+                <li><a href="product.html?type=hoodie">Hoodies</a></li>
+                <li><a href="product.html?type=sweats">Sweats</a></li>
+                <li class="cart-link">
+                    <a href="cart.html">
+                        <img src="shoppingcart.png" alt="Shopping Cart" class="cart-icon">
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="signin-container">
+        <div class="signin-box">
+            <h2>Sign In</h2>
+            <form id="signin-form" class="signin-form">
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit" class="signin-submit">Sign In</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" class="create-account">Create Account</a></p>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Stores</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="product.html?type=shirt">Shirts</a></li>
+                    <li><a href="product.html?type=shorts">Shorts</a></li>
+                    <li><a href="product.html?type=hoodie">Hoodies</a></li>
+                    <li><a href="product.html?type=sweats">Sweatpants</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Subscribe to our newsletter</h3>
+                <div class="newsletter">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Join!</button>
+                </div>
+                <div class="social">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ELEGANCE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>

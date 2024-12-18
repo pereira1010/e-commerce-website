@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-Commerce Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="left-section">
+                <div class="logo">
+                    <a href="index.html">ELEGANCE</a>
+                </div>
+                <a href="signin.html" class="login-button">Sign In</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html?type=shirt">Shirts</a></li>
+                <li><a href="product.html?type=shorts">Shorts</a></li>
+                <li><a href="product.html?type=hoodie">Hoodies</a></li>
+                <li><a href="product.html?type=sweats">Sweats</a></li>
+                <li class="cart-link">
+                    <a href="cart.html">
+                        <img src="shoppingcart.png" alt="Shopping Cart" class="cart-icon">
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="products">
+        <div class="product-card">
+            <img src="images/bhoodie.png" alt="Hoodie">
+            <h3>Hoodie</h3>
+            <p>$40.00</p>
+            <a href="product.html?type=hoodie" class="view-details">View Details</a>
+        </div>
+
+        <div class="product-card">
+            <img src="images/bshorts.png" alt="Shorts">
+            <h3>Shorts</h3>
+            <p>$25.00</p>
+            <a href="product.html?type=shorts" class="view-details">View Details</a>
+        </div>
+
+        <div class="product-card">
+            <img src="images/bshirt.jpeg" alt="Shirt">
+            <h3>Shirt</h3>
+            <p>$30.00</p>
+            <a href="product.html?type=shirt" class="view-details">View Details</a>
+        </div>
+
+        <div class="product-card">
+            <img src="images/bsweats.png" alt="Sweats">
+            <h3>Sweats</h3>
+            <p>$30.00</p>
+            <a href="product.html?type=sweats" class="view-details">View Details</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Stores</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="product.html?type=shirt">Shirts</a></li>
+                    <li><a href="product.html?type=shorts">Shorts</a></li>
+                    <li><a href="product.html?type=hoodie">Hoodies</a></li>
+                    <li><a href="product.html?type=sweats">Sweatpants</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Subscribe to our newsletter</h3>
+                <div class="newsletter">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Join!</button>
+                </div>
+                <div class="social">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 My E-Commerce Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>

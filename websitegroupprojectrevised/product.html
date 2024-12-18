@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="left-section">
+                <div class="logo">
+                    <a href="index.html">ELEGANCE</a>
+                </div>
+                <a href="signin.html" class="login-button">Sign In</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html?type=shirt">Shirts</a></li>
+                <li><a href="product.html?type=shorts">Shorts</a></li>
+                <li><a href="product.html?type=hoodie">Hoodies</a></li>
+                <li><a href="product.html?type=sweats">Sweats</a></li>
+                <li class="cart-link">
+                    <a href="cart.html">
+                        <img src="shoppingcart.png" alt="Shopping Cart" class="cart-icon">
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="product-detail">
+        <div class="product-image">
+            <img id="product-img" src="" alt="Product Image">
+        </div>
+        <div class="product-info">
+            <h2 id="product-name"></h2>
+            <p class="price" id="product-price"></p>
+            <div class="size-selection">
+                <label for="size">Size:</label>
+                <select id="size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="xlarge">X-Large</option>
+                </select>
+            </div>
+            <div class="color-selection">
+                <label for="color">Color:</label>
+                <select id="color"></select>
+            </div>
+            <button id="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Stores</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="product.html?type=shirt">Shirts</a></li>
+                    <li><a href="product.html?type=shorts">Shorts</a></li>
+                    <li><a href="product.html?type=hoodie">Hoodies</a></li>
+                    <li><a href="product.html?type=sweats">Sweatpants</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Subscribe to our newsletter</h3>
+                <div class="newsletter">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Join!</button>
+                </div>
+                <div class="social">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 My E-Commerce Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        // Product configurations
+        const products = {
+            'hoodie': {
+                name: 'Hoodie',
+                price: 40.00,
+                colors: {
+                    'black': './images/bhoodie.png',
+                    'white': './images/whoodie.png'
+                }
+            },
+            'shirt': {
+                name: 'Shirt',
+                price: 30.00,
+                colors: {
+                    'black': './images/bshirt.jpeg',
+                    'white': './images/wshirt.jpg'
+                }
+            },
+            'shorts': {
+                name: 'Shorts',
+                price: 25.00,
+                colors: {
+                    'black': './images/bshorts.png',
+                    'red': './images/rshorts.png'
+                }
+            },
+            'sweats': {
+                name: 'Sweats',
+                price: 30.00,
+                colors: {
+                    'black': './images/bsweats.png',
+                    'red': './images/rsweats.png'
+                }
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productType = urlParams.get('type') || 'hoodie'; // default to hoodie if not specified
+            const product = products[productType];
+
+            // Set product name and price
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-price').textContent = `$${product.price.toFixed(2)}`;
+
+            // Setup color options
+            const colorSelect = document.getElementById('color');
+            Object.keys(product.colors).forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color.charAt(0).toUpperCase() + color.slice(1);
+                colorSelect.appendChild(option);
+            });
+
+            // Update image when color changes
+            const updateImage = () => {
+                const selectedColor = colorSelect.value;
+                const productImg = document.getElementById('product-img');
+                productImg.src = product.colors[selectedColor];
+                productImg.alt = `${product.name} in ${selectedColor}`;
+            };
+
+            colorSelect.addEventListener('change', updateImage);
+            
+            // Set initial image
+            updateImage();
+
+            // Setup add to cart functionality
+            const addToCartBtn = document.getElementById('add-to-cart');
+            const sizeSelect = document.getElementById('size');
+
+            addToCartBtn.addEventListener('click', () => {
+                const productData = {
+                    id: `${productType}-${colorSelect.value}`,
+                    name: `${product.name} (${colorSelect.value})`,
+                    price: product.price,
+                    image: product.colors[colorSelect.value]
+                };
+                const size = sizeSelect.value;
+                const color = colorSelect.value;
+                
+                // Update button state immediately
+                addToCartBtn.textContent = 'Adding...';
+                addToCartBtn.classList.add('adding');
+                
+                // Add to cart
+                if (cartFunctions.addToCart(productData, size, color)) {
+                    setTimeout(() => {
+                        addToCartBtn.classList.remove('adding');
+                        addToCartBtn.classList.add('added');
+                        addToCartBtn.textContent = 'Added to Cart!';
+                        
+                        // Reset button after 2 seconds
+                        setTimeout(() => {
+                            addToCartBtn.classList.remove('added');
+                            addToCartBtn.textContent = 'Add to Cart';
+                        }, 2000);
+                    }, 500);
+                } else {
+                    // Reset button on error
+                    addToCartBtn.textContent = 'Add to Cart';
+                    addToCartBtn.classList.remove('adding', 'added');
+                }
+            });
+
+            cartFunctions.updateCartCount();
+        });
+    </script>
+</body>
+</html>
